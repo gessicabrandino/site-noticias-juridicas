@@ -17,3 +17,7 @@ def sobre():
 @app.route("/contato")
 def contato():
   return menu + "Sugestões, escreva para: gessica.brandino@grupofolha.com.br"
+
+@app.route("/carteiro"
+def carteiro():
+           
