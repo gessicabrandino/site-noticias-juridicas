@@ -1,5 +1,9 @@
 flask
 gunicorn
-gspread
+requests
 beautifulsoup4
+datetime
+gspread
+oauth2client
+pandas
 sendgrid
