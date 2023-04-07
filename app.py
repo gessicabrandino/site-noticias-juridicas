@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-  return "Olá! Bem-vindo ao site que automatiza a coleta de notícias jurídicas publicadas pelo jornal Folha de S.Paulo.
+  return "Olá! Bem-vindo ao site que automatiza a coleta de notícias jurídicas publicadas pelo jornal Folha de S.Paulo."
 
 @app.route("/sobre")
 def sobre():
