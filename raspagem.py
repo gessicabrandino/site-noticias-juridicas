@@ -4,11 +4,13 @@ import datetime
 import pandas as pd
 from bs4 import BeautifulSoup
 
-Acessando a página de última notícias da Folha
+#Acessando a página de última notícias da Folha
+
 site_Folha=requests.get('https://www1.folha.uol.com.br/ultimas-noticias/')
 bs=BeautifulSoup(site_Folha.content,'html.parser')
 
 #Coletando as últimas notícias publicadas
+
 noticias = bs.find_all('div', 'c-headline__content')
 ultimas_noticias = []
 for n in noticias:
@@ -17,7 +19,7 @@ for n in noticias:
   Data = n.find('time')['datetime']
   ultimas_noticias.append({'Manchete': Manchete, 'Link': Link, 'Data': Data})
 
-# Criação de um dataframe com o dicionário de notícias 
+#Criação de um dataframe com o dicionário de notícias 
 ultimas_folha = pd.DataFrame(ultimas_noticias)
 
 #Lista de termos para procurar nos títulos
@@ -30,7 +32,7 @@ temas_juridicos = [
 
 string_temas = '|'.join(temas_juridicos)
 
-# Criação e aplicação do filtro com os termos da lista
+#Criação e aplicação do filtro com os termos da lista
 
 filtro_juridico = ultimas_folha['Manchete'].str.contains(string_temas)
 
