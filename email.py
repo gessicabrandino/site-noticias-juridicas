@@ -41,7 +41,7 @@ mensagem = Mail(
     Content('text/html', folhajus_email)
     )
 
-# Acionando o envio da mensagem
+#Acionando o envio da mensagem
 
 resposta = carteiro.client.mail.send.post(request_body=mensagem.get())
 print(resposta.status_code)
