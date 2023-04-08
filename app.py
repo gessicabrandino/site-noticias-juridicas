@@ -1,4 +1,25 @@
-from flask import Flask
+import os
+
+import gspread
+import oauth2client
+import requests
+import bs4
+import datetime
+from bs4 import BeautifulSoup
+from flask import Flask, request
+from oauth2client.service_account import ServiceAccountCredentials
+
+
+GOOGLE_SHEETS_KEY = os.environ["GOOGLE_SHEETS_KEY"] 
+
+GOOGLE_SHEETS_CREDENTIALS = os.environ["GOOGLE_SHEETS_CREDENTIALS"]
+with open("credenciais.json", mode="w") as arquivo:
+  arquivo.write(GOOGLE_SHEETS_CREDENTIALS)
+conta = ServiceAccountCredentials.from_json_keyfile_name("credenciais.json")
+api = gspread.authorize(conta)
+planilha = api.open_by_key(f"{GOOGLE_SHEETS_KEY}")
+sheet = planilha.worksheet("Sheet1")
+
 app = Flask(__name__)
 
 menu = """
@@ -8,7 +29,7 @@ menu = """
 
 @app.route("/")
 def index():
-  return menu + "Olá! Bem-vindo ao site que automatiza a coleta de notícias jurídicas do jornal Folha de S.Paulo."
+  return menu + "Bem-vindo ao site que coleta notícias jurídicas da Folha de S.Paulo."
 
 @app.route("/sobre")
 def sobre():
