@@ -35,11 +35,9 @@ def contato():
 
 @app.route("/coleta")
 def coleta():
-  
-import raspagem
-import planilha
+  import raspagem
+  import planilha
 
 @app.route("/carteiro")
 def carteiro():
-  
-import email          
+  import email          
