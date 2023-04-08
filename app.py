@@ -5,20 +5,14 @@ import oauth2client
 import requests
 import bs4
 import datetime
+import pandas as pd
+import sendgrid
 from bs4 import BeautifulSoup
 from flask import Flask, request
 from oauth2client.service_account import ServiceAccountCredentials
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail, Email, To, Content
 
-
-GOOGLE_SHEETS_KEY = os.environ["GOOGLE_SHEETS_KEY"] 
-
-GOOGLE_SHEETS_CREDENTIALS = os.environ["GOOGLE_SHEETS_CREDENTIALS"]
-with open("credenciais.json", mode="w") as arquivo:
-  arquivo.write(GOOGLE_SHEETS_CREDENTIALS)
-conta = ServiceAccountCredentials.from_json_keyfile_name("credenciais.json")
-api = gspread.authorize(conta)
-planilha = api.open_by_key(f"{GOOGLE_SHEETS_KEY}")
-sheet = planilha.worksheet("Sheet1")
 
 app = Flask(__name__)
 
@@ -33,12 +27,19 @@ def index():
 
 @app.route("/sobre")
 def sobre():
-  return menu + "Esse site foi criado pela jornalista Géssica Brandino para auxiliar na produção das newsletters do projeto FolhaJus, que reúne o conteúdo jurídico da Folha. Para receber, entre no site do jornal e faça o cadastro."
+  return menu + "Esse site foi criado pela jornalista Géssica Brandino para auxiliar na produção das newsletters do projeto FolhaJus, que reúne o conteúdo jurídico da Folha. Para mais informações, acesse o site do jornal."
 
 @app.route("/contato")
 def contato():
   return menu + "Sugestões, escreva para: gessica.brandino@grupofolha.com.br"
 
-@app.route("/carteiro"
+@app.route("/coleta")
+def coleta():
+  
+import raspagem
+import planilha
+
+@app.route("/carteiro")
 def carteiro():
-           
+  
+import email          
