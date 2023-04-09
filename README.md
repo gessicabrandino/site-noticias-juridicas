@@ -8,4 +8,4 @@
 
 * **Primeira etapa:** Criação de um código de raspagem das últimas notícias publicadas pela Folha, filtradas a partir de termos jurídicos;
 * **Segunda etapa:** Armazena as notícias em uma planilha, checando as notícias inéditas e criadno uma lista de envio;
-* **Terceira etapa:** Edição de um email que será enviado para informar quais foram os títulos e links coletados do site;
+* **Terceira etapa:** Edição de um email que será enviado para informar quais foram os títulos e links coletados do site.
