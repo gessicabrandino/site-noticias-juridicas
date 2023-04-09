@@ -1,9 +1,20 @@
 import os
 
+import gspread
+import oauth2client
+import requests
+import bs4
+import datetime
 import pandas as pd
-import sendgrid 
+import sendgrid
+from bs4 import BeautifulSoup
+from flask import Flask, request
+from oauth2client.service_account import ServiceAccountCredentials
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail, Email, To, Content
+
+import raspagem
+from arquivo import df_lista_envio
 
 SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
 
