@@ -6,21 +6,20 @@ from bs4 import BeautifulSoup
 
 #Acessando a página de última notícias da Folha
 
-site_Folha=requests.get('https://www1.folha.uol.com.br/ultimas-noticias/')
-bs=BeautifulSoup(site_Folha.content,'html.parser')
+def raspagem_noticias():
+        site_Folha = requests.get('https://www1.folha.uol.com.br/ultimas-noticias/')
+        bs = BeautifulSoup(site_Folha.content,'html.parser')
 
-#Coletando as últimas notícias publicadas
+        noticias = bs.find_all('div', 'c-headline__content')
+        ultimas_noticias = []
+        for n in noticias:
+            Link = n.find('a')['href']
+            Manchete = n.find('h2').text
+            Data = n.find('time')['datetime']
+            ultimas_noticias.append({'Manchete': Manchete, 'Link': Link, 'Data': Data})
 
-noticias = bs.find_all('div', 'c-headline__content')
-ultimas_noticias = []
-for n in noticias:
-  Link = n.find('a')['href']
-  Manchete = n.find('h2').text
-  Data = n.find('time')['datetime']
-  ultimas_noticias.append({'Manchete': Manchete, 'Link': Link, 'Data': Data})
-
-#Criação de um dataframe com o dicionário de notícias 
-ultimas_folha = pd.DataFrame(ultimas_noticias)
+        ultimas_folha = pd.DataFrame(ultimas_noticias)
+        return ultimas_folha
 
 #Lista de termos para procurar nos títulos
 
