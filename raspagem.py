@@ -15,7 +15,6 @@ for n in noticias:
   Link = n.find('a')['href']
   Manchete = n.find('h2').text
   Data = n.find('time')['datetime']
-  #Data = datetime.strptime(Data_str,'%Y-%m-%d %H:%M')
   ultimas_noticias.append({'Manchete': Manchete, 'Link': Link, 'Data': Data})
 
 # Criação de um dataframe com o dicionário de notícias 
