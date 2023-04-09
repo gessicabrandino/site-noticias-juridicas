@@ -1,6 +1,6 @@
 # site-noticias-juridicas
 
-**Motivação:** Projeto final da disciplina Algoritmos de Automação, do curso MBA em Jornalismo de Dados, do Insper, tem como objetivo **automatizar o processo de checagem diária das notícias jurídicas do jornal Folha de S.Paulo** para produção das newsletters jurídicas do projeto FolhaJus por meio de um email automatizado.
+Projeto final da disciplina Algoritmos de Automação, do curso MBA em Jornalismo de Dados, do Insper, tem como objetivo **automatizar o processo de checagem diária das notícias jurídicas do jornal Folha de S.Paulo** para produção das newsletters jurídicas do projeto FolhaJus por meio de um email automatizado.
 
 
 **A solução seguirá os seguintes passos:**
