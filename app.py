@@ -13,12 +13,6 @@ from oauth2client.service_account import ServiceAccountCredentials
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail, Email, To, Content
 
-#As três etapas do código
-
-import raspagem
-import planilha
-import email
-
 #Variáveis de ambiente do Render
 GOOGLE_SHEETS_CREDENTIALS = os.environ['GOOGLE_SHEETS_CREDENTIALS']
 GOOGLE_SHEETS_KEY = os.environ['GOOGLE_SHEETS_KEY'] 
@@ -45,10 +39,14 @@ def sobre():
 def contato():
   return menu + "Sugestões, escreva para: gessica.brandino@grupofolha.com.br"
 
-@app.route("/coleta") #Roda o código que está nos arquivos Raspagem e Planilha para raspar as notícias e atualizar a planilha
+@app.route("/coleta") #Função para raspar e filtras notícias
 def coleta():
- 
   
-@app.route("/carteiro") #Roda o código do arquivo Email para enviar as mensagens
+
+@app.route("/arquivo") #Função para guardar as notícias em uma planilha e gerar a lista de envio
+def arquivo():
+ 
+
+@app.route("/carteiro") #Função para formatar a mensagem em html e mandar por email
 def carteiro():
 
