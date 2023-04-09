@@ -1,9 +1,15 @@
 import os
 
+import requests
+import bs4
+import datetime
 import pandas as pd
 import gspread
 import oauth2client
+from bs4 import BeautifulSoup
 from oauth2client.service_account import ServiceAccountCredentials
+
+import raspagem
 
 #Conectando com a service account por meio da leitura do arquivo em Json
 
