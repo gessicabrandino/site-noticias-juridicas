@@ -13,12 +13,27 @@ from oauth2client.service_account import ServiceAccountCredentials
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail, Email, To, Content
 
-#Variáveis de ambiente do Render
-GOOGLE_SHEETS_CREDENTIALS = os.environ['GOOGLE_SHEETS_CREDENTIALS']
-GOOGLE_SHEETS_KEY = os.environ['GOOGLE_SHEETS_KEY'] 
-SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
 
-#Configurando o site
+#Fazendo a conexão com o Google Sheets
+
+GOOGLE_SHEETS_KEY = os.environ['GOOGLE_SHEETS_KEY'] 
+
+GOOGLE_SHEETS_CREDENTIALS = os.environ['GOOGLE_SHEETS_CREDENTIALS']
+with open('credenciais.json', mode='w') as arquivo:
+  arquivo.write(GOOGLE_SHEETS_CREDENTIALS)
+conta = ServiceAccountCredentials.from_json_keyfile_name('credenciais.json')
+
+api = gspread.authorize(conta)
+planilha = api.open_by_key(f'{GOOGLE_SHEETS_KEY}') 
+sheet = planilha.worksheet('noticias')
+
+#Fazendo a conexão com o Sendgrid
+
+SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
+carteiro = sendgrid.SendGridAPIClient(api_key = SENDGRID_API_KEY)
+
+
+#Configurando o site com o Flask
 
 app = Flask(__name__)
 
