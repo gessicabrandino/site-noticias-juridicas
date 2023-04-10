@@ -67,5 +67,3 @@ def noticias_novas(folhajus):
   df_lista_envio.columns=['Manchete','Link','Data']
   df_lista_envio.set_index('Manchete')
   return df_lista_envio
-  
-noticias_novas(filtro(raspa()))
