@@ -1,7 +1,7 @@
 import requests
 from flask import Flask, request
 
-from raspagem import raspa, filtro, noticias_novas
+import raspagem
 import carta_folhajus
 
 #Configurando o site com o Flask
@@ -27,8 +27,8 @@ def contato():
 
 @app.route("/carteiro")
 def carteiro():
-  raspagem = raspa()
-  filtrados = filtro(raspagem)
-  novas = noticias_nova(filtrado)
+  raspagem = raspagem.raspa()
+  filtrados = raspagem.filtro(raspagem)
+  novas = raspagem.noticias_novas(filtrado)
   conteudos = f'{raspagem} \n\n {filtrados} \n \n {novas}'
   return conteudos
