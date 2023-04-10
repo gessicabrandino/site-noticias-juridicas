@@ -38,9 +38,9 @@ def raspa():
 
 def filtro(ultimas_folha):
   temas_juridicos = [
-  'STF', 'Supremo', 'STJ', 'TSE','TRT','TRF','OAB','CNJ','Ministerio Publico','MP','PF', 'Polícia Federal','Defensoria','PGR','Procuradoria',
-  'Justiça', 'juiz','advoga','promotor','procurador','julga', 'tribuna', 'deci', 'condena', 'lei ','legali',
-  'Moraes','Gilmar Mendes','Barroso','Rosa Weber', 'Carmen Lucia', 'Mendonca','Fachin', 'Toffoli', 'Kassio', 'Lewandowski','Fux', 'Aras',]
+  'STF', 'Supremo', 'STJ', 'TSE','TRT','TRF','OAB','CNJ','Ministerio Publico','MPF','PF', 'Policia Federal','Defensoria','PGR','Procuradoria',
+  'Justiça', 'juiz','advoga','promotor','procurador', 'desembargad', 'inelegi', 'reu','julga', 'tribuna', 'deci', 'condena', 'lei ', 'leis','legali',
+  'Moraes','Gilmar Mendes','Barroso','Rosa Weber', 'Carmen Lucia', 'Mendonca','Fachin', 'Toffoli', 'Kassio', 'Lewandowski','Fux', 'Aras', 'Zanin',]
   string_temas = '|'.join(temas_juridicos)
   filtro_juridico = ultimas_folha['Manchete'].str.contains(string_temas)
   folhajus_noticias = ultimas_folha.loc[filtro_juridico].copy()
