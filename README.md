@@ -1,6 +1,6 @@
-#Notícias jurídicas
+## Notícias jurídicas
 
-Projeto final da disciplina Algoritmos de Automação, do curso MBA em Jornalismo de Dados, do Insper, consiste em um email automatizado com as notícias jurídicas do jornal **Folha de S.Paulo*** para produção das newsletters e atualização do índice [FolhaJus](https://www1.folha.uol.com.br/poder/folhajus/).
+Projeto final da disciplina Algoritmos de Automação, do curso MBA em Jornalismo de Dados, do Insper, consiste em um email automatizado com as notícias jurídicas do jornal **Folha de S.Paulo** para produção das newsletters e atualização do índice [FolhaJus](https://www1.folha.uol.com.br/poder/folhajus/).
 
 
 **A solução seguirá os seguintes passos:**
