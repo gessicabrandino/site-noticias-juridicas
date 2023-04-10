@@ -2,7 +2,7 @@ import requests
 from flask import Flask, request
 
 from raspagem import raspa, filtro, noticias_novas
-from email import envia_email
+import email
 
 #Configurando o site com o Flask
 
