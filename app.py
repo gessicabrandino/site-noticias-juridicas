@@ -30,5 +30,5 @@ def carteiro():
   raspagem = raspa()
   filtrados = filtro(raspagem)
   novas = noticias_novas(filtrado)
-  conteudos = f'{raspagem} \n\n {filtrados} \n \n {novas}'
-  return conteudos
+  carta_folhajus.envia_email(novas)
+  return ok
