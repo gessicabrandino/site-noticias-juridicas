@@ -22,7 +22,7 @@ api = gspread.authorize(conta)
 
 #Acessando a página de última notícias da Folha
 
-def raspagem():
+def raspa():
   site_Folha=requests.get('https://www1.folha.uol.com.br/ultimas-noticias/')
   bs=BeautifulSoup(site_Folha.content,'html.parser')
   noticias = bs.find_all('div', 'c-headline__content')
