@@ -27,8 +27,19 @@ def contato():
 
 @app.route("/carteiro")
 def carteiro():
-  raspagem = raspa()
-  filtrados = filtro(raspagem)
-  novas = noticias_novas(filtrados)
-  carta_folhajus.envia_email(novas)
+  try:
+    raspagem = raspa()
+    filtrados = filtro(raspagem)
+    novas = noticias_novas(filtrados)
+    carta_folhajus.envia_email(novas)
+  except:
+    folhajus_email = "Não há notícias novas"
+    mensagem = Mail(
+      Email('gessica.brandino@grupofolha.com.br'),
+      [To('ge.brandino@gmail.com'),   
+      To('alvarojusten@gmail.com')],
+      'FolhaJus: Notícias jurídicas da Folha',
+      Content('text/html', folhajus_email)
+      )
+    resposta = carteiro.client.mail.send.post(request_body=mensagem.get())
   return 'ok'
