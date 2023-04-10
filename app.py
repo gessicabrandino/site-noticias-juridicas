@@ -2,7 +2,7 @@ import requests
 from flask import Flask, request
 
 from raspagem import raspa, filtro, noticias_novas
-import email
+import carta_folhajus
 
 #Configurando o site com o Flask
 
@@ -28,5 +28,5 @@ def contato():
 @app.route("/carteiro")
 def carteiro():
   df = noticias_novas(filtro(raspa()))
-  email.envia_email(df)
+  carta_folhajus.envia_email(df)
   return 'E-mail enviado'
