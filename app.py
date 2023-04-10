@@ -29,6 +29,6 @@ def contato():
 def carteiro():
   raspagem = raspa()
   filtrados = filtro(raspagem)
-  novas = noticias_novas(filtrado)
+  novas = noticias_novas(filtrados)
   carta_folhajus.envia_email(novas)
   return ok
