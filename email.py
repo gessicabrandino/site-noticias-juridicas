@@ -5,8 +5,6 @@ from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail, Email, To, Content
 
 
-from raspagem import noticias_novas, filtro, raspagem
-
 SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
 
 carteiro = sendgrid.SendGridAPIClient(api_key=SENDGRID_API_KEY)
