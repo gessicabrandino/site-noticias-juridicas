@@ -25,12 +25,8 @@ def sobre():
 def contato():
   return menu + "Sugestões, escreva para: gessica.brandino@grupofolha.com.br"
 
-@app.route("/coleta") #Função para raspar e filtras notícias
-def coleta():
-  
-@app.route("/carteiro") #Função para formatar a mensagem em html e mandar por email
+@app.route("/carteiro")
 def carteiro():
   df = noticias_novas(filtro(raspagem()))
   envia_email(df)
   return 'E-mail enviado'
-
