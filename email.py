@@ -10,7 +10,6 @@ SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
 carteiro = sendgrid.SendGridAPIClient(api_key=SENDGRID_API_KEY)
 
 def envia_email(df):
-  carteiro = sendgrid.SendGridAPIClient(api_key=key)
   folhajus_html = df.to_html()
 
   titulo = 'Notícias FolhaJus'
