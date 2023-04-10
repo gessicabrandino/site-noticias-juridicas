@@ -47,8 +47,6 @@ def filtro(ultimas_folha):
   folhajus = folhajus_noticias.values.tolist()
   return folhajus
   
-  filtro(raspagem())
-  
 #Acessando a planilha de trabalho
 
 GOOGLE_SHEETS_KEY = os.environ['GOOGLE_SHEETS_KEY'] 
