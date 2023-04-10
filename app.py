@@ -31,4 +31,4 @@ def carteiro():
   filtrados = filtro(raspagem)
   novas = noticias_novas(filtrados)
   carta_folhajus.envia_email(novas)
-  return ok
+  return 'ok'
