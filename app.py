@@ -28,5 +28,5 @@ def contato():
 @app.route("/carteiro")
 def carteiro():
   df = noticias_novas(filtro(raspa()))
-  envia_email(df)
+  email.envia_email(df)
   return 'E-mail enviado'
