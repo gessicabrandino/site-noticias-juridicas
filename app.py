@@ -1,4 +1,7 @@
 import requests
+import sendgrid
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail, Email, To, Content
 from flask import Flask, request
 
 from raspagem import raspa, filtro, noticias_novas
