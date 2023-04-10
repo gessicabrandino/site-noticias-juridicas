@@ -27,6 +27,8 @@ def contato():
 
 @app.route("/carteiro")
 def carteiro():
-  df = noticias_novas(filtro(raspa()))
-  carta_folhajus.envia_email(df)
-  return 'E-mail enviado'
+  raspagem = raspa()
+  filtrados = filtro(raspagem)
+  novas = noticias_nova(filtrado)
+  conteudos = f'{raspagem} \n\n {filtrados} \n \n {novas}'
+  return conteudos
