@@ -30,8 +30,9 @@ def envia_email(df):
   mensagem = Mail(
       Email('gessica.brandino@grupofolha.com.br'),
       [To('ge.brandino@gmail.com'),
-      To('gabi.oliveira21@gmail.com'),
-      To('rebrocchi@gmail.com')],
+       To('joao.abdo@grupofolha.com.br'),
+      To('arthurguimaraesfolha@gmail.com'),
+      To('joaoabdo2@gmail.com')],
       'FolhaJus: Notícias jurídicas da Folha',
       Content('text/html', folhajus_email)
       )
